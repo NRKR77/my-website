@@ -1,149 +1,167 @@
-/* General body setup */
-body {
-    font-family: Arial, sans-serif;
+/* Reset and general styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #1A3A5D;  /* Dark Blue Background */
-    color: white;  /* Text color changed to white to stand out against the dark blue background */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box;
 }
 
-/* Header Styling with Animation */
-header {
-    background-color: #1565C0;  /* Slightly lighter blue for header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c3e50; /* Dark blue background */
     color: white;
-    padding: 40px;
     text-align: center;
-    animation: fadeInHeader 2s ease-out;
+    padding: 20px;
 }
 
-@keyframes fadeInHeader {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Header section */
+header {
+    background-color: #34495e;
+    padding: 1rem;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* "Follow me" text animation */
-.follow-text {
-    font-size: 2rem;  /* Make the "Follow me" text larger */
-    margin-top: 20px;
-    font-weight: bold;
-    color: #F39C12;  /* A golden color for emphasis */
-    animation: fadeInText 2s ease-out 0.5s; /* Animation delay to follow header */
+h1.animate-header {
+    font-size: 2.5rem;
+    color: white;
+    animation: fadeInTop 1s forwards cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
 }
 
-@keyframes fadeInText {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+p.follow-text.animate-text {
+    font-size: 1.5rem;
+    color: white;
+    animation: fadeInSlideUp 1s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s;
+    opacity: 0;
 }
 
-/* Social Links Section with Animation */
+/* Profile section */
+.profile-section {
+    margin-top: 40px;
+    animation: fadeInScale 1s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+    opacity: 0;
+}
+
+.profile-img {
+    width: 120px; /* Small profile image */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.1) rotate(5deg); /* Zoom in slightly and rotate */
+}
+
+.profile-section h1 {
+    font-size: 2.2rem;
+    margin-top: 15px;
+    color: #ecf0f1;
+    animation: slideInRight 1s forwards ease-out 0.8s;
+    opacity: 0;
+}
+
+.profile-section p {
+    font-size: 1.2rem;
+    color: #bdc3c7;
+    margin-top: 10px;
+    animation: slideInLeft 1s forwards ease-out 1s;
+    opacity: 0;
+}
+
+/* Social media buttons */
 .social-links {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    animation: fadeInLinks 2s ease-out 1s; /* Animation delay */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    opacity: 0;
+    animation: staggerFadeInUp 1.5s forwards ease-out 1.8s;
 }
 
 .social-links a {
-    background-color: #1565C0;  /* Lighter blue background for buttons */
-    color: white;
-    padding: 15px 30px;
-    margin: 10px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInLink 1s forwards;
-    transition: background-color 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
-    gap: 15px;  /* Space between icon and text */
-}
-
-@keyframes fadeInLink {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Delay for individual links animation */
-.social-links a:nth-child(1) {
-    animation-delay: 1.2s; /* Instagram */
-}
-
-.social-links a:nth-child(2) {
-    animation-delay: 1.4s; /* TikTok */
-}
-
-.social-links a:nth-child(3) {
-    animation-delay: 1.6s; /* YouTube */
-}
-
-/* Icon Styling */
-.social-links a i {
-    font-size: 1.8rem; /* Size of the icons */
-}
-
-/* Hover Effect for Social Links */
-.social-links a:hover {
-    background-color: #1E88E5;  /* Darker blue when hovering */
-    transform: scale(1.05);
-}
-
-/* Footer Section with Animation */
-footer {
-    background-color: #1565C0;  /* Blue Background for footer */
+    padding: 18px 30px;
+    background-color: #3498db;
     color: white;
-    text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    animation: slideInFooter 2s ease-out 2s; /* Animation delay for footer */
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-@keyframes slideInFooter {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.social-links a:hover {
+    background-color: #2980b9;
+    transform: translateY(-5px) scale(1.02);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .social-links a {
-        font-size: 1.2rem;
-        padding: 12px 24px;
-    }
+.social-links a i {
+    margin-right: 15px;
+    font-size: 1.6rem;
+}
 
-    header h1 {
-        font-size: 2rem;
-    }
+/* Instagram specific color */
+.social-links a.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
 
-    .follow-text {
-        font-size: 1.5rem;
-    }
+.social-links a.instagram:hover {
+    filter: brightness(1.2);
+}
+
+/* YouTube and TikTok specific colors */
+.social-links a.youtube { background-color: #FF0000; }
+.social-links a.youtube:hover { background-color: #cc0000; }
+
+.social-links a.tiktok { background-color: #000000; }
+.social-links a.tiktok:hover { background-color: #222222; }
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    padding: 1rem;
+    margin-top: 50px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Keyframe animations */
+@keyframes fadeInTop {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInSlideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes staggerFadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }

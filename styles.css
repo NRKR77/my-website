@@ -1,8 +1,115 @@
+/* General body setup */
 body {
-    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3498db;  /* Blue Background */
+    color: white;  /* Text color changed to white to stand out against the blue background */
 }
 
-h1 {
-    color: #333;
+/* Header Styling */
+header {
+    background-color: #2980b9;  /* Slightly darker blue for header */
+    color: white;
+    padding: 40px;
+    text-align: center;
+    animation: fadeInHeader 2s ease-out;
+}
+
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Social Links Section */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    animation: fadeInLinks 2s ease-out;
+}
+
+.social-links a {
+    background-color: #2980b9;  /* Blue Background for buttons */
+    color: white;
+    padding: 15px 30px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInLink 1s forwards;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-links a:nth-child(1) {
+    animation-delay: 0.2s; /* Instagram */
+}
+
+.social-links a:nth-child(2) {
+    animation-delay: 0.4s; /* TikTok */
+}
+
+.social-links a:nth-child(3) {
+    animation-delay: 0.6s; /* YouTube */
+}
+
+.social-links a:hover {
+    background-color: #1f6f8b;  /* Darker blue when hovering */
+    transform: scale(1.05);
+}
+
+/* Animation for links */
+@keyframes fadeInLink {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Section */
+footer {
+    background-color: #2980b9;  /* Blue Background for footer */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: slideInFooter 1s ease-out;
+}
+
+@keyframes slideInFooter {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .social-links a {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
 }

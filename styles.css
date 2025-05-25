@@ -5,9 +5,10 @@ body {
     padding: 0;
     background-color: #1A3A5D;  /* Dark Blue Background */
     color: white;  /* Text color changed to white to stand out against the dark blue background */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Header Styling */
+/* Header Styling with Animation */
 header {
     background-color: #1565C0;  /* Slightly lighter blue for header */
     color: white;
@@ -27,21 +28,33 @@ header {
     }
 }
 
-/* "Follow me" text styling */
+/* "Follow me" text animation */
 .follow-text {
-    font-size: 1.8rem;  /* Make the "Follow me" text a little larger */
+    font-size: 2rem;  /* Make the "Follow me" text larger */
     margin-top: 20px;
     font-weight: bold;
     color: #F39C12;  /* A golden color for emphasis */
+    animation: fadeInText 2s ease-out 0.5s; /* Animation delay to follow header */
 }
 
-/* Social Links Section */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Social Links Section with Animation */
 .social-links {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    animation: fadeInLinks 2s ease-out;
+    animation: fadeInLinks 2s ease-out 1s; /* Animation delay */
 }
 
 .social-links a {
@@ -61,12 +74,6 @@ header {
     gap: 15px;  /* Space between icon and text */
 }
 
-/* Icon Styling */
-.social-links a i {
-    font-size: 1.8rem; /* Size of the icons */
-}
-
-/* Animation for links */
 @keyframes fadeInLink {
     0% {
         opacity: 0;
@@ -78,26 +85,31 @@ header {
     }
 }
 
-/* Social Links Delay */
+/* Delay for individual links animation */
 .social-links a:nth-child(1) {
-    animation-delay: 0.2s; /* Instagram */
+    animation-delay: 1.2s; /* Instagram */
 }
 
 .social-links a:nth-child(2) {
-    animation-delay: 0.4s; /* TikTok */
+    animation-delay: 1.4s; /* TikTok */
 }
 
 .social-links a:nth-child(3) {
-    animation-delay: 0.6s; /* YouTube */
+    animation-delay: 1.6s; /* YouTube */
 }
 
-/* Hover Effect */
+/* Icon Styling */
+.social-links a i {
+    font-size: 1.8rem; /* Size of the icons */
+}
+
+/* Hover Effect for Social Links */
 .social-links a:hover {
     background-color: #1E88E5;  /* Darker blue when hovering */
     transform: scale(1.05);
 }
 
-/* Footer Section */
+/* Footer Section with Animation */
 footer {
     background-color: #1565C0;  /* Blue Background for footer */
     color: white;
@@ -106,7 +118,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    animation: slideInFooter 1s ease-out;
+    animation: slideInFooter 2s ease-out 2s; /* Animation delay for footer */
 }
 
 @keyframes slideInFooter {

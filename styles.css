@@ -3,13 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #3498db;  /* Blue Background */
-    color: white;  /* Text color changed to white to stand out against the blue background */
+    background-color: #1A3A5D;  /* Dark Blue Background */
+    color: white;  /* Text color changed to white to stand out against the dark blue background */
 }
 
 /* Header Styling */
 header {
-    background-color: #2980b9;  /* Slightly darker blue for header */
+    background-color: #1565C0;  /* Slightly lighter blue for header */
     color: white;
     padding: 40px;
     text-align: center;
@@ -27,6 +27,14 @@ header {
     }
 }
 
+/* "Follow me" text styling */
+.follow-text {
+    font-size: 1.8rem;  /* Make the "Follow me" text a little larger */
+    margin-top: 20px;
+    font-weight: bold;
+    color: #F39C12;  /* A golden color for emphasis */
+}
+
 /* Social Links Section */
 .social-links {
     display: flex;
@@ -37,7 +45,7 @@ header {
 }
 
 .social-links a {
-    background-color: #2980b9;  /* Blue Background for buttons */
+    background-color: #1565C0;  /* Lighter blue background for buttons */
     color: white;
     padding: 15px 30px;
     margin: 10px;
@@ -85,13 +93,13 @@ header {
 
 /* Hover Effect */
 .social-links a:hover {
-    background-color: #1f6f8b;  /* Darker blue when hovering */
+    background-color: #1E88E5;  /* Darker blue when hovering */
     transform: scale(1.05);
 }
 
 /* Footer Section */
 footer {
-    background-color: #2980b9;  /* Blue Background for footer */
+    background-color: #1565C0;  /* Blue Background for footer */
     color: white;
     text-align: center;
     padding: 15px;
@@ -121,5 +129,9 @@ footer {
 
     header h1 {
         font-size: 2rem;
+    }
+
+    .follow-text {
+        font-size: 1.5rem;
     }
 }

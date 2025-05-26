@@ -1,7 +1,35 @@
+/* Base Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    color: #333;
+}
+
+h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://example.com/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    transform: scale(1.1);
+    transition: transform 1s ease;
+}
+
 /* Dark Mode Styles */
 body.dark-mode {
     background: #2C3E50;
     color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode header {
@@ -10,6 +38,55 @@ body.dark-mode header {
 
 body.dark-mode footer {
     background-color: #34495E;
+}
+
+/* Header Animation */
+.animate-header {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #FF6347;
+    animation: typing 3s steps(40) 1s 1 normal both;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Profile Section Glow */
+.shining-name {
+    font-size: 3rem;
+    color: #3498db;
+    text-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 15px #3498db;
+    }
+    100% {
+        text-shadow: 0 0 30px #3498db, 0 0 60px #3498db, 0 0 90px #3498db;
+    }
+}
+
+/* Dark Mode Cursor */
+body.dark-mode {
+    cursor: url('https://example.com/glow-cursor.png'), auto;
+}
+
+/* Social Media Links Hover */
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+    color: #FF6347;
 }
 
 /* Scroll to Top Button */
@@ -31,4 +108,22 @@ body.dark-mode footer {
 
 .scroll-top-btn.show {
     display: block;
+}
+
+/* Footer Animation */
+.animate-footer {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-section {
+        text-align: center;
+    }
+
+    .social-links a {
+        display: block;
+        margin: 10px 0;
+    }
 }

@@ -1,40 +1,88 @@
-// Random Background Color Transition every 15 seconds
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+// Show Login page
+function showLoginPage() {
+    document.getElementById('login-page').style.display = 'block';
+    document.getElementById('signup-page').style.display = 'none';
+    document.getElementById('main-page').style.display = 'none';
 }
 
-// Change background color every 15 seconds
-setInterval(() => {
-    document.body.style.transition = 'background-color 3s ease';
-    document.body.style.backgroundColor = getRandomColor();
-}, 15000); // Change color every 15 seconds
+// Show Sign Up page
+function showSignupPage() {
+    document.getElementById('login-page').style.display = 'none';
+    document.getElementById('signup-page').style.display = 'block';
+    document.getElementById('main-page').style.display = 'none';
+}
 
-// Scroll-to-Top Button Functionality
-const scrollTopBtn = document.querySelector('.scroll-top-btn');
+// Show Main page
+function showMainPage() {
+    document.getElementById('login-page').style.display = 'none';
+    document.getElementById('signup-page').style.display = 'none';
+    document.getElementById('main-page').style.display = 'block';
+}
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-        scrollTopBtn.classList.add('show');
+// Check if the user is logged in
+window.onload = function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+        showMainPage();
     } else {
-        scrollTopBtn.classList.remove('show');
+        showLoginPage();
+    }
+}
+
+// Sign Up form handling
+document.getElementById('sign-up-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('sign-up-email').value;
+    const password = document.getElementById('sign-up-password').value;
+
+    if (email && password) {
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPassword', password);
+
+        alert('Sign Up Successful! You can now log in.');
+
+        showLoginPage();
+    } else {
+        alert('Please enter both email and password.');
     }
 });
 
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// Log In form handling
+document.getElementById('log-in-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('log-in-email').value;
+    const password = document.getElementById('log-in-password').value;
+
+    const storedEmail = localStorage.getItem('userEmail');
+    const storedPassword = localStorage.getItem('userPassword');
+
+    if (email === storedEmail && password === storedPassword) {
+        localStorage.setItem('isLoggedIn', 'true');
+        alert('Login Successful!');
+        showMainPage();
+    } else {
+        alert('Incorrect email or password. Please try again.');
+    }
 });
 
-// Fade-in Sections on Scroll
-const fadeInSections = document.querySelectorAll('.profile-section, .social-links, footer');
-window.addEventListener('scroll', () => {
-    fadeInSections.forEach(section => {
-        if (section.getBoundingClientRect().top < window.innerHeight - 50) {
-            section.classList.add('visible');
-        }
-    });
+// Switch to Sign Up page
+document.getElementById('go-to-signup').addEventListener('click', function(e) {
+    e.preventDefault();
+    showSignupPage();
 });
+
+// Switch to Login page
+document.getElementById('go-to-login').addEventListener('click', function(e) {
+    e.preventDefault();
+    showLoginPage();
+});
+
+// Log out function
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('userPassword');
+    showLoginPage();
+}

@@ -15,7 +15,7 @@ body, html {
 
 /* Background and Container Styles */
 body {
-    background: #f7f7f7;
+    background: linear-gradient(135deg, #ff7f50, #ff6347);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,6 +33,7 @@ body {
     text-align: center;
     padding: 10px;
     animation: fadeIn 1.5s ease-in-out;
+    border-radius: 0 0 20px 20px;
 }
 
 @keyframes fadeIn {
@@ -55,13 +56,13 @@ body {
 .animate-header {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
+    color: #fff;
     margin: 0;
 }
 
 .follow-text {
     font-size: 1.2rem;
-    color: #666;
+    color: #fff;
 }
 
 /* Profile Section */
@@ -71,12 +72,16 @@ body {
     opacity: 0;
     animation: fadeInUp 2s forwards;
     animation-delay: 1s;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .name {
     font-size: 3rem;
     font-weight: bold;
-    color: #222;
+    color: #333;
     margin: 10px 0;
 }
 
@@ -101,11 +106,16 @@ body {
     color: #555;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .social-links a:hover {
     color: #FF6347;
     transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 /* Scroll-to-Top Button */
@@ -115,8 +125,8 @@ body {
     right: 20px;
     background-color: #FF6347;
     color: white;
-    padding: 10px 20px;
-    font-size: 1.5rem;
+    padding: 15px;
+    font-size: 2rem;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -137,9 +147,11 @@ body {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     color: #777;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Keyframes for Animations */

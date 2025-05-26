@@ -125,4 +125,57 @@ body {
 
 .social-links a {
     font-size: 1.5rem;
-    color: #fff
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    color: #ff6347;
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.6);
+}
+
+/* Scroll-to-Top Button with Bounce Effect */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6347;
+    color: white;
+    padding: 15px;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounceEffect 1s infinite alternate;
+}
+
+@keyframes bounceEffect {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.scroll-top-btn.show {
+    display: block;
+}
+
+/* Footer Section with Neon Border */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff6347;
+}

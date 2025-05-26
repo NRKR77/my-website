@@ -8,7 +8,7 @@
         /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
+            background-color: #f0f2f5;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,18 +18,20 @@
             flex-direction: column;
         }
 
-        h2 {
+        h2, h1 {
+            color: #333;
             font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        /* Auth Pages */
+        /* Container */
         .auth-container {
-            background-color: white;
-            padding: 2rem;
+            background-color: #fff;
+            padding: 3rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 350px;
         }
 
         .auth-form input {
@@ -38,6 +40,7 @@
             margin: 0.5rem 0;
             border: 1px solid #ddd;
             border-radius: 5px;
+            font-size: 1rem;
         }
 
         .auth-button {
@@ -49,6 +52,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .auth-button:hover {
@@ -57,27 +61,44 @@
 
         .auth-switch {
             margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
         }
 
-        /* Front Page */
-        .header-content {
+        .auth-switch a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .auth-switch a:hover {
+            color: #2980b9;
+        }
+
+        /* Main Page */
+        .main-page {
+            display: none;
             text-align: center;
             margin-top: 2rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
         }
 
         .profile-section {
-            padding: 2rem;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
             margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f0f2f5;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Social Media Section */
         .social-links {
             display: flex;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .social-links a {
@@ -99,95 +120,107 @@
             font-size: 0.8rem;
             color: #888;
         }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Form animation */
+        .auth-container, .main-page {
+            animation: fadeIn 0.8s ease-out;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Main Content -->
+    <!-- Authentication Section (Login and Sign Up) -->
     <div id="content">
-        <!-- Log In Page (login.html) -->
+        <!-- Login Page -->
         <div id="login-page" class="auth-container">
-            <h2>Log In to Your Account</h2>
+            <h2>Log In</h2>
             <form id="log-in-form" class="auth-form">
-                <input type="email" id="log-in-email" placeholder="Enter your email" required>
-                <input type="password" id="log-in-password" placeholder="Enter your password" required>
+                <input type="email" id="log-in-email" placeholder="Email" required>
+                <input type="password" id="log-in-password" placeholder="Password" required>
                 <button type="submit" class="auth-button">Log In</button>
             </form>
             <p class="auth-switch">Don't have an account? <a href="#" id="go-to-signup">Sign Up</a></p>
         </div>
 
-        <!-- Sign Up Page (signup.html) -->
+        <!-- Sign Up Page -->
         <div id="signup-page" class="auth-container" style="display: none;">
-            <h2>Create a New Account</h2>
+            <h2>Create an Account</h2>
             <form id="sign-up-form" class="auth-form">
-                <input type="email" id="sign-up-email" placeholder="Enter your email" required>
-                <input type="password" id="sign-up-password" placeholder="Enter your password" required>
+                <input type="email" id="sign-up-email" placeholder="Email" required>
+                <input type="password" id="sign-up-password" placeholder="Password" required>
                 <button type="submit" class="auth-button">Sign Up</button>
             </form>
             <p class="auth-switch">Already have an account? <a href="#" id="go-to-login">Log In</a></p>
         </div>
 
-        <!-- Main Page Content (index.html) -->
-        <div id="main-page" style="display: none;">
-            <header class="header-content">
+        <!-- Main Content (After Login) -->
+        <div id="main-page" class="main-page">
+            <header>
                 <h1>Welcome to NRKR's Personal Website</h1>
-                <p>Enjoy exploring the content!</p>
+                <p>You're logged in. Enjoy exploring the content!</p>
             </header>
 
             <section class="profile-section">
                 <h2>About Me</h2>
-                <p>I'm a video editor and gamer passionate about technology and creativity.</p>
+                <p>I am a passionate video editor and gamer who loves creativity and technology!</p>
             </section>
 
-            <!-- Social Media Links Section -->
+            <!-- Social Media Links -->
             <section class="social-links">
-                <a href="https://www.instagram.com/nr7kr_" target="_blank" class="instagram">
-                    <i>Instagram</i>
-                </a>
-                <a href="https://www.tiktok.com/@nr7kr_" target="_blank" class="tiktok">
-                    <i>TikTok</i>
-                </a>
-                <a href="https://www.youtube.com/@nr7kr" target="_blank" class="youtube">
-                    <i>YouTube</i>
-                </a>
+                <a href="https://www.instagram.com/nr7kr_" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@nr7kr_" target="_blank">TikTok</a>
+                <a href="https://www.youtube.com/@nr7kr" target="_blank">YouTube</a>
             </section>
 
             <footer>
                 <p>© 2025 NRKR. All rights reserved.</p>
+                <button class="auth-button" onclick="logout()">Log Out</button>
             </footer>
         </div>
     </div>
 
     <script>
-        // Function to show the login page
+        // Show Login page
         function showLoginPage() {
             document.getElementById('login-page').style.display = 'block';
             document.getElementById('signup-page').style.display = 'none';
             document.getElementById('main-page').style.display = 'none';
         }
 
-        // Function to show the sign up page
+        // Show Sign Up page
         function showSignupPage() {
             document.getElementById('login-page').style.display = 'none';
             document.getElementById('signup-page').style.display = 'block';
             document.getElementById('main-page').style.display = 'none';
         }
 
-        // Function to show the main content page (after login)
+        // Show Main page
         function showMainPage() {
             document.getElementById('login-page').style.display = 'none';
             document.getElementById('signup-page').style.display = 'none';
             document.getElementById('main-page').style.display = 'block';
         }
 
-        // Check if user is logged in
+        // Check if the user is logged in
         window.onload = function() {
             const isLoggedIn = localStorage.getItem('isLoggedIn');
-
             if (isLoggedIn) {
-                showMainPage(); // User is logged in, show main page
+                showMainPage();
             } else {
-                showLoginPage(); // Show the login page
+                showLoginPage();
             }
         }
 
@@ -199,13 +232,11 @@
             const password = document.getElementById('sign-up-password').value;
 
             if (email && password) {
-                // Store user data in localStorage
                 localStorage.setItem('userEmail', email);
                 localStorage.setItem('userPassword', password);
 
                 alert('Sign Up Successful! You can now log in.');
 
-                // Redirect to login page
                 showLoginPage();
             } else {
                 alert('Please enter both email and password.');
@@ -225,24 +256,31 @@
             if (email === storedEmail && password === storedPassword) {
                 localStorage.setItem('isLoggedIn', 'true');
                 alert('Login Successful!');
-
-                showMainPage(); // Redirect to main page after login
+                showMainPage();
             } else {
-                alert('Incorrect email or password. Please try again.');
+                alert('Incorrect email or password.');
             }
         });
 
-        // Switch to sign up page
+        // Switch to Sign Up page
         document.getElementById('go-to-signup').addEventListener('click', function(e) {
             e.preventDefault();
             showSignupPage();
         });
 
-        // Switch to login page
+        // Switch to Login page
         document.getElementById('go-to-login').addEventListener('click', function(e) {
             e.preventDefault();
             showLoginPage();
         });
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userPassword');
+            showLoginPage();
+        }
     </script>
 
 </body>

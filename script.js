@@ -1,9 +1,25 @@
-// Particles.js
+// Function to generate a random color
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// Smooth transition of background color every 10 seconds
+setInterval(() => {
+    document.body.style.transition = 'background-color 5s ease-in-out';
+    document.body.style.backgroundColor = getRandomColor();
+}, 10000); // Change every 10 seconds
+
+// Particles.js Setup
 particlesJS("particles-js", {
     particles: {
         number: { value: 100 },
         shape: { type: "circle" },
-        opacity: { value: 0.5, random: true },
+        opacity: { value: 0.4, random: true },
         size: { value: 3 },
         move: { enable: true, speed: 1 }
     },
@@ -27,7 +43,7 @@ menuToggle.addEventListener('click', () => {
     menu.classList.toggle('open');
 });
 
-// Scroll-to-Top Button
+// Scroll-to-Top Button Visibility
 const scrollTopBtn = document.querySelector('.scroll-top-btn');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
@@ -63,12 +79,6 @@ contactForm.addEventListener('submit', (event) => {
         alert("All fields are required!");
     }
 });
-
-// Night/Day Auto Theme
-const hour = new Date().getHours();
-if (hour >= 18 || hour < 6) {
-    document.body.classList.add('dark-mode');
-}
 
 // Loading Spinner
 window.addEventListener('load', () => {

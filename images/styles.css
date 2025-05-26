@@ -1,0 +1,191 @@
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    transition: background 4s ease-in-out, color 4s ease-in-out;
+}
+
+/* Background with Neon Gradient */
+body {
+    background: linear-gradient(45deg, #ff007f, #ff8c00, #4e00ff, #00ffe6);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Animation for Gradient Background */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Notification Bar with Neon Effect */
+.update-notification {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FF6347;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    animation: glowEffect 1.5s ease-in-out infinite alternate;
+    border-radius: 0 0 20px 20px;
+}
+
+@keyframes glowEffect {
+    0% { box-shadow: 0 0 20px 5px #ff6347; }
+    100% { box-shadow: 0 0 30px 10px #ff6347; }
+}
+
+/* Header Section with Floating Effect */
+.header-content {
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 2s forwards, floatEffect 4s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-header {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.follow-text {
+    font-size: 1.5rem;
+    color: #ff8c00;
+}
+
+/* Profile Section with Neon Border and Hover Effect */
+.profile-section {
+    text-align: center;
+    margin: 60px 20px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff007f;
+    opacity: 0;
+    animation: fadeInUp 2s forwards;
+    animation-delay: 1s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 0, 127, 0.8);
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Style for Profile Image */
+.profile-img {
+    width: 150px;         /* Adjust the width as needed */
+    height: 150px;        /* Adjust the height */
+    border-radius: 50%;   /* Makes the image circular */
+    object-fit: cover;    /* Ensures the image fits properly */
+    border: 5px solid #ff6347; /* Optional border for effect */
+    margin-bottom: 20px;  /* Space between image and text */
+}
+
+/* Social Media Links with Animated Hover */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    opacity: 0;
+    animation: fadeInUp 2s forwards;
+    animation-delay: 2s;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    color: #ff6347;
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.6);
+}
+
+/* Scroll-to-Top Button with Bounce Effect */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6347;
+    color: white;
+    padding: 15px;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounceEffect 1s infinite alternate;
+}
+
+@keyframes bounceEffect {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.scroll-top-btn.show {
+    display: block;
+}
+
+/* Footer Section with Neon Border */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff6347;
+}

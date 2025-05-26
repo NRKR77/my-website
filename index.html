@@ -3,43 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to NRKR's Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>NRKR's Personal Website</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Auth Pages */
+        .auth-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .auth-button {
+            padding: 1rem;
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-button:hover {
+            background-color: #2980b9;
+        }
+
+        .auth-switch {
+            margin-top: 1rem;
+        }
+
+        /* Front Page */
+        .header-content {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .profile-section {
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        /* Social Media Section */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            font-size: 1.5rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header-content">
-        <h1 class="animate-header">Welcome to NRKR's Personal Website!</h1>
-        <p class="follow-text">Follow me from everywhere!</p>
-    </header>
 
-    <!-- Profile Section (without image) -->
-    <section class="profile-section">
-        <h1 class="name">nr7kr_</h1>
-        <p class="description">I'm a video editor and gamer, passionate about tech and creativity.</p>
-    </section>
+    <!-- Main Content -->
+    <div id="content">
+        <!-- Log In Page (login.html) -->
+        <div id="login-page" class="auth-container">
+            <h2>Log In to Your Account</h2>
+            <form id="log-in-form" class="auth-form">
+                <input type="email" id="log-in-email" placeholder="Enter your email" required>
+                <input type="password" id="log-in-password" placeholder="Enter your password" required>
+                <button type="submit" class="auth-button">Log In</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="#" id="go-to-signup">Sign Up</a></p>
+        </div>
 
-    <!-- Social Media Links -->
-    <section class="social-links">
-        <a href="https://www.instagram.com/nr7kr_" target="_blank" class="instagram">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://www.tiktok.com/@nr7kr_" target="_blank" class="tiktok">
-            <i class="fab fa-tiktok"></i> TikTok
-        </a>
-        <a href="https://www.youtube.com/@nr7kr" target="_blank" class="youtube">
-            <i class="fab fa-youtube"></i> YouTube
-        </a>
-    </section>
+        <!-- Sign Up Page (signup.html) -->
+        <div id="signup-page" class="auth-container" style="display: none;">
+            <h2>Create a New Account</h2>
+            <form id="sign-up-form" class="auth-form">
+                <input type="email" id="sign-up-email" placeholder="Enter your email" required>
+                <input type="password" id="sign-up-password" placeholder="Enter your password" required>
+                <button type="submit" class="auth-button">Sign Up</button>
+            </form>
+            <p class="auth-switch">Already have an account? <a href="#" id="go-to-login">Log In</a></p>
+        </div>
 
-    <!-- Scroll-to-Top Button -->
-    <button class="scroll-top-btn">↑</button>
+        <!-- Main Page Content (index.html) -->
+        <div id="main-page" style="display: none;">
+            <header class="header-content">
+                <h1>Welcome to NRKR's Personal Website</h1>
+                <p>Enjoy exploring the content!</p>
+            </header>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>© 2025 NRKR. All rights reserved.</p>
-    </footer>
+            <section class="profile-section">
+                <h2>About Me</h2>
+                <p>I'm a video editor and gamer passionate about technology and creativity.</p>
+            </section>
 
-    <script src="script.js"></script>
+            <!-- Social Media Links Section -->
+            <section class="social-links">
+                <a href="https://www.instagram.com/nr7kr_" target="_blank" class="instagram">
+                    <i>Instagram</i>
+                </a>
+                <a href="https://www.tiktok.com/@nr7kr_" target="_blank" class="tiktok">
+                    <i>TikTok</i>
+                </a>
+                <a href="https://www.youtube.com/@nr7kr" target="_blank" class="youtube">
+                    <i>YouTube</i>
+                </a>
+            </section>
+
+            <footer>
+                <p>© 2025 NRKR. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the login page
+        function showLoginPage() {
+            document.getElementById('login-page').style.display = 'block';
+            document.getElementById('signup-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'none';
+        }
+
+        // Function to show the sign up page
+        function showSignupPage() {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('signup-page').style.display = 'block';
+            document.getElementById('main-page').style.display = 'none';
+        }
+
+        // Function to show the main content page (after login)
+        function showMainPage() {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('signup-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+        }
+
+        // Check if user is logged in
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+            if (isLoggedIn) {
+                showMainPage(); // User is logged in, show main page
+            } else {
+                showLoginPage(); // Show the login page
+            }
+        }
+
+        // Sign Up form handling
+        document.getElementById('sign-up-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('sign-up-email').value;
+            const password = document.getElementById('sign-up-password').value;
+
+            if (email && password) {
+                // Store user data in localStorage
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userPassword', password);
+
+                alert('Sign Up Successful! You can now log in.');
+
+                // Redirect to login page
+                showLoginPage();
+            } else {
+                alert('Please enter both email and password.');
+            }
+        });
+
+        // Log In form handling
+        document.getElementById('log-in-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('log-in-email').value;
+            const password = document.getElementById('log-in-password').value;
+
+            const storedEmail = localStorage.getItem('userEmail');
+            const storedPassword = localStorage.getItem('userPassword');
+
+            if (email === storedEmail && password === storedPassword) {
+                localStorage.setItem('isLoggedIn', 'true');
+                alert('Login Successful!');
+
+                showMainPage(); // Redirect to main page after login
+            } else {
+                alert('Incorrect email or password. Please try again.');
+            }
+        });
+
+        // Switch to sign up page
+        document.getElementById('go-to-signup').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSignupPage();
+        });
+
+        // Switch to login page
+        document.getElementById('go-to-login').addEventListener('click', function(e) {
+            e.preventDefault();
+            showLoginPage();
+        });
+    </script>
+
 </body>
 </html>

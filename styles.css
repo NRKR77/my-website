@@ -24,8 +24,6 @@ body {
     justify-content: center;
     align-items: center;
     animation: slideDown 0.5s ease-in-out;
-    visibility: visible;  /* Ensure visibility of notification */
-    animation: slideDown 5s ease-in-out forwards;
 }
 
 .update-notification p {
@@ -46,6 +44,8 @@ body {
 
 /* Header Section Styles */
 header {
+    padding: 20px;
+    background-color: #34495E; /* Dark background for header */
     margin-top: 60px;
 }
 
@@ -55,20 +55,21 @@ h1.animate-header {
     animation: fadeInHeader 2s ease-in-out;
 }
 
-/* Shining Text Effect */
+/* Shining Text Effect for Profile Name */
 .shining-name {
     font-size: 3rem;
-    color: #FF6347; /* Tomato color */
-    text-shadow: 0 0 10px #FF6347, 0 0 20px #FF6347, 0 0 30px #FF6347;
+    color: white; /* White shining effect */
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
     animation: shine 1.5s infinite alternate;
 }
 
+/* Shining Animation */
 @keyframes shine {
     0% {
-        text-shadow: 0 0 10px #FF6347, 0 0 20px #FF6347, 0 0 30px #FF6347;
+        text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
     }
     100% {
-        text-shadow: 0 0 20px #FF6347, 0 0 40px #FF6347, 0 0 60px #FF6347;
+        text-shadow: 0 0 20px white, 0 0 40px white, 0 0 60px white;
     }
 }
 
@@ -80,7 +81,7 @@ h1.animate-header {
 .description {
     font-size: 1.3rem;
     margin-top: 10px;
-    color: #BDC3C7; /* Light text color */
+    color: #BDC3C7; /* Lighter text color */
     font-style: italic;
 }
 
@@ -98,7 +99,7 @@ h1.animate-header {
     padding: 15px 30px;
     text-decoration: none;
     color: white;
-    background-color: #2980B9;
+    background-color: #2980B9; /* Blue background for social links */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -144,7 +145,7 @@ footer {
     }
 }
 
-/* Media Query for Small Screens */
+/* Media Query for Smaller Screens */
 @media (max-width: 600px) {
     .shining-name {
         font-size: 2rem;

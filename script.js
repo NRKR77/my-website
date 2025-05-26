@@ -1,4 +1,4 @@
-// Initialize Particles.js
+// Particles.js
 particlesJS("particles-js", {
     particles: {
         number: { value: 100 },
@@ -14,7 +14,7 @@ particlesJS("particles-js", {
     }
 });
 
-// Theme Toggle (Dark Mode)
+// Dark Mode Toggle
 const themeToggle = document.querySelector('.theme-toggle');
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
@@ -41,7 +41,7 @@ scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Fade-in Effect on Scroll
+// Fade-in Sections on Scroll
 const fadeInSections = document.querySelectorAll('.fade-in-section');
 window.addEventListener('scroll', () => {
     fadeInSections.forEach(section => {
@@ -50,6 +50,25 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Contact Form Validation
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (event) => {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !message) {
+        event.preventDefault();
+        alert("All fields are required!");
+    }
+});
+
+// Night/Day Auto Theme
+const hour = new Date().getHours();
+if (hour >= 18 || hour < 6) {
+    document.body.classList.add('dark-mode');
+}
 
 // Loading Spinner
 window.addEventListener('load', () => {

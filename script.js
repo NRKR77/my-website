@@ -1,13 +1,21 @@
-// script.js
-
-// Interactive background movement with mouse
-document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX / window.innerWidth * 100;
-    const mouseY = e.clientY / window.innerHeight * 100;
-    document.body.style.backgroundPosition = `${mouseX}% ${mouseY}%`;
-});
-
 // Dark Mode Toggle
-document.querySelector('.theme-toggle').addEventListener('click', () => {
+const themeToggleButton = document.querySelector('.theme-toggle');
+
+themeToggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
+
+// Scroll-to-Top Button Visibility
+window.onscroll = function() {
+    let scrollBtn = document.querySelector('.scroll-top-btn');
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+};
+
+// Scroll to Top Function
+document.querySelector('.scroll-top-btn').onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};

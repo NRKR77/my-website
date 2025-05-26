@@ -112,6 +112,16 @@ body {
     color: #fff;
 }
 
+/* Style for Profile Image */
+.profile-img {
+    width: 150px;         /* Adjust the width as needed */
+    height: 150px;        /* Adjust the height */
+    border-radius: 50%;   /* Makes the image circular */
+    object-fit: cover;    /* Ensures the image fits properly */
+    border: 5px solid #ff6347; /* Optional border for effect */
+    margin-bottom: 20px;  /* Space between image and text */
+}
+
 /* Social Media Links with Animated Hover */
 .social-links {
     display: flex;

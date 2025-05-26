@@ -4,18 +4,21 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     height: 100%;
-    color: #333;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow-x: hidden;
     transition: background 4s ease-in-out, color 4s ease-in-out;
 }
 
-/* Background and Container Styles */
+/* Background with Neon Gradient */
 body {
-    background: linear-gradient(135deg, #ff7f50, #ff6347);
+    background: linear-gradient(45deg, #ff007f, #ff8c00, #4e00ff, #00ffe6);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -23,7 +26,14 @@ body {
     flex-direction: column;
 }
 
-/* Notification Bar */
+/* Animation for Gradient Background */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Notification Bar with Neon Effect */
 .update-notification {
     position: fixed;
     top: 0;
@@ -31,21 +41,21 @@ body {
     background-color: #FF6347;
     color: white;
     text-align: center;
-    padding: 10px;
-    animation: fadeIn 1.5s ease-in-out;
+    padding: 15px;
+    animation: glowEffect 1.5s ease-in-out infinite alternate;
     border-radius: 0 0 20px 20px;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes glowEffect {
+    0% { box-shadow: 0 0 20px 5px #ff6347; }
+    100% { box-shadow: 0 0 30px 10px #ff6347; }
 }
 
-/* Header Section */
+/* Header Section with Floating Effect */
 .header-content {
     text-align: center;
     opacity: 0;
-    animation: fadeInUp 2s forwards;
+    animation: fadeInUp 2s forwards, floatEffect 4s ease-in-out infinite;
 }
 
 @keyframes fadeInUp {
@@ -53,49 +63,61 @@ body {
     100% { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes floatEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
 .animate-header {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
     margin: 0;
 }
 
 .follow-text {
-    font-size: 1.2rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: #ff8c00;
 }
 
-/* Profile Section */
+/* Profile Section with Neon Border and Hover Effect */
 .profile-section {
     text-align: center;
     margin: 60px 20px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff007f;
     opacity: 0;
     animation: fadeInUp 2s forwards;
     animation-delay: 1s;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 0, 127, 0.8);
 }
 
 .name {
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
     margin: 10px 0;
 }
 
 .description {
-    font-size: 1.2rem;
-    color: #444;
+    font-size: 1.5rem;
+    color: #fff;
 }
 
-/* Social Media Links */
+/* Social Media Links with Animated Hover */
 .social-links {
     display: flex;
     justify-content: center;
-    margin: 40px 0;
     gap: 30px;
+    margin: 40px 0;
     opacity: 0;
     animation: fadeInUp 2s forwards;
     animation-delay: 2s;
@@ -103,59 +125,4 @@ body {
 
 .social-links a {
     font-size: 1.5rem;
-    color: #555;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 10px 20px;
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.social-links a:hover {
-    color: #FF6347;
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 1);
-}
-
-/* Scroll-to-Top Button */
-.scroll-top-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FF6347;
-    color: white;
-    padding: 15px;
-    font-size: 2rem;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.scroll-top-btn.show {
-    display: block;
-}
-
-.scroll-top-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Footer Section */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
-    color: #777;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Keyframes for Animations */
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+    color: #fff

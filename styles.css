@@ -1,68 +1,87 @@
-/* General Body Styles */
+/* General body styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Solid black background */
-    color: white; /* White text for contrast */
+    background-color: #FF7F00; /* Orange background */
+    color: white;
     text-align: center;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
-    position: relative;
 }
 
-/* Moving Lines Background */
-body::before {
-    content: '';
-    position: absolute;
+/* Notification Bar Styles */
+.update-notification {
+    background-color: #3498DB; /* Blue background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        135deg, 
-        rgba(255, 255, 255, 0.5), /* Semi-transparent white for lines */
-        rgba(255, 255, 255, 0.5) 1px, 
-        transparent 1px, 
-        transparent 10px /* Adjust line spacing */
-    );
-    animation: moveLines 5s linear infinite; /* Animation to move the lines */
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideDown 0.5s ease-in-out;
+    visibility: visible;  /* Ensure visibility of notification */
+    animation: slideDown 5s ease-in-out forwards;
 }
 
-/* Animation for Moving Lines */
-@keyframes moveLines {
-    0% {
-        transform: translateX(-100%); /* Start from left off-screen */
+.update-notification p {
+    margin: 0;
+}
+
+/* Slide down animation for notification */
+@keyframes slideDown {
+    from {
+        top: -50px;
+        opacity: 0;
     }
-    100% {
-        transform: translateX(100%); /* Move to right off-screen */
+    to {
+        top: 0;
+        opacity: 1;
     }
 }
 
 /* Header Section Styles */
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
-    padding: 20px;
-    margin-bottom: 30px;
-    z-index: 2; /* Ensure it is above the moving lines */
-    position: relative;
+    margin-top: 60px;
+}
+
+h1.animate-header {
+    font-size: 2.5rem;
+    color: #FF6347; /* Tomato color */
+    animation: fadeInHeader 2s ease-in-out;
 }
 
 /* Shining Text Effect */
 .shining-name {
     font-size: 3rem;
-    color: white; /* White for shining effect */
-    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    color: #FF6347; /* Tomato color */
+    text-shadow: 0 0 10px #FF6347, 0 0 20px #FF6347, 0 0 30px #FF6347;
     animation: shine 1.5s infinite alternate;
 }
 
 @keyframes shine {
     0% {
-        text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+        text-shadow: 0 0 10px #FF6347, 0 0 20px #FF6347, 0 0 30px #FF6347;
     }
     100% {
-        text-shadow: 0 0 20px white, 0 0 40px white, 0 0 60px white;
+        text-shadow: 0 0 20px #FF6347, 0 0 40px #FF6347, 0 0 60px #FF6347;
     }
+}
+
+/* Profile Section Styles */
+.profile-section {
+    margin-top: 40px;
+}
+
+.description {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: #BDC3C7; /* Light text color */
+    font-style: italic;
 }
 
 /* Social Media Links */
@@ -78,34 +97,42 @@ header {
     font-size: 1.5rem;
     padding: 15px 30px;
     text-decoration: none;
-    color: white; /* Text color white */
-    background-color: #7F8C8D; /* Gray background */
+    color: white;
+    background-color: #2980B9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
-/* Hover Effects on Social Media Links */
 .social-links a:hover {
-    background-color: #95A5A6; /* Lighter gray on hover */
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background-color: #3498DB;
+    transform: translateY(-5px);
 }
 
 .social-links i {
-    margin-right: 10px; /* Space between icon and text */
+    margin-right: 10px;
 }
 
-/* Footer Section Styles */
+/* Footer Section */
 footer {
     margin-top: 50px;
-    background-color: #111111; /* Dark footer */
+    background-color: #34495E;
     padding: 20px;
-    z-index: 2; /* Ensure footer is above the moving lines */
-    position: relative;
+    animation: fadeInFooter 2s ease-in-out;
 }
 
-/* Animations */
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animations for Links */
 @keyframes fadeInLinks {
     0% {
         opacity: 0;
@@ -117,13 +144,18 @@ footer {
     }
 }
 
-@keyframes fadeInFooter {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    .shining-name {
+        font-size: 2rem;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.2rem;
+        padding: 12px 25px;
     }
 }

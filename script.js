@@ -1,3 +1,49 @@
+// Function to generate a random hex color code
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// Function to apply random colors
+function applyRandomColors() {
+    // Change background to random color
+    document.body.style.backgroundColor = getRandomColor();
+
+    // Random button colors
+    const buttons = document.querySelectorAll('.auth-button');
+    buttons.forEach(button => {
+        button.style.backgroundColor = getRandomColor();
+    });
+
+    // Random text color for headings
+    const headings = document.querySelectorAll('h1, h2');
+    headings.forEach(heading => {
+        heading.style.color = getRandomColor();
+    });
+
+    // Random link colors
+    const links = document.querySelectorAll('.auth-switch a, .social-links a');
+    links.forEach(link => {
+        link.style.color = getRandomColor();
+    });
+}
+
+// Apply random colors when the page is loaded
+window.onload = function() {
+    applyRandomColors();
+
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+        showMainPage();
+    } else {
+        showLoginPage();
+    }
+}
+
 // Show Login page
 function showLoginPage() {
     document.getElementById('login-page').style.display = 'block';
@@ -17,16 +63,6 @@ function showMainPage() {
     document.getElementById('login-page').style.display = 'none';
     document.getElementById('signup-page').style.display = 'none';
     document.getElementById('main-page').style.display = 'block';
-}
-
-// Check if the user is logged in
-window.onload = function() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (isLoggedIn) {
-        showMainPage();
-    } else {
-        showLoginPage();
-    }
 }
 
 // Sign Up form handling

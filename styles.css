@@ -3,8 +3,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Set pure black background */
-    color: white; /* Keep text color white for contrast */
+    background-color: #000000; /* Pure black background */
+    color: white; /* White text color */
     text-align: center;
     overflow: hidden;
     transition: background-color 0.3s ease; /* Smooth transition for background */
@@ -12,10 +12,40 @@ body {
 
 /* Header Section Styles */
 header {
-    background-color: #111111; /* Darker shade for header to contrast with background */
+    background-color: #111111; /* Dark gray header */
     padding: 20px;
     margin-bottom: 30px;
     animation: fadeInHeader 2s ease-in-out;
+}
+
+/* Shining Text Effect */
+.shining-name {
+    font-size: 3rem;
+    color: white; /* White for shining effect */
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    animation: shine 1.5s infinite alternate, pulse 2s infinite ease-in-out;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shine {
+    0% {
+        text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    }
+    100% {
+        text-shadow: 0 0 20px white, 0 0 40px white, 0 0 60px white;
+    }
 }
 
 /* Profile Section Styles */
@@ -26,7 +56,7 @@ header {
 .description {
     font-size: 1.3rem;
     margin-top: 10px;
-    color: #BDC3C7;
+    color: #BDC3C7; /* Lighter gray text */
     font-style: italic;
 }
 
@@ -39,22 +69,27 @@ header {
     animation: fadeInLinks 1.5s ease-in-out;
 }
 
-/* Hover Effects on Social Media Links */
+/* Gray social media links */
 .social-links a {
     font-size: 1.5rem;
     padding: 15px 30px;
     text-decoration: none;
-    color: white;
-    background-color: #2980B9;
+    color: white; /* Text color white */
+    background-color: #7F8C8D; /* Gray background */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
 }
 
+/* Hover Effects on Social Media Links */
 .social-links a:hover {
-    background-color: #3498DB;
+    background-color: #95A5A6; /* Lighter gray on hover */
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.social-links i {
+    margin-right: 10px; /* Space between icon and text */
 }
 
 /* Footer Section */
@@ -130,20 +165,3 @@ footer {
     }
 
     .social-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .social-links a {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-    }
-
-    .animate-header {
-        font-size: 1.8rem;
-    }
-
-    .follow-text {
-        font-size: 1rem;
-    }
-}

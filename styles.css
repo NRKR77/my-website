@@ -33,24 +33,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Notification Bar with Neon Effect */
-.update-notification {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #FF6347;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    animation: glowEffect 1.5s ease-in-out infinite alternate;
-    border-radius: 0 0 20px 20px;
-}
-
-@keyframes glowEffect {
-    0% { box-shadow: 0 0 20px 5px #ff6347; }
-    100% { box-shadow: 0 0 30px 10px #ff6347; }
-}
-
 /* Header Section with Floating Effect */
 .header-content {
     text-align: center;
@@ -81,7 +63,7 @@ body {
     color: #ff8c00;
 }
 
-/* Profile Section with Neon Border and Hover Effect */
+/* Profile Section with Neon Border */
 .profile-section {
     text-align: center;
     margin: 60px 20px;
@@ -110,16 +92,6 @@ body {
 .description {
     font-size: 1.5rem;
     color: #fff;
-}
-
-/* Style for Profile Image */
-.profile-img {
-    width: 150px;         /* Adjust the width as needed */
-    height: 150px;        /* Adjust the height */
-    border-radius: 50%;   /* Makes the image circular */
-    object-fit: cover;    /* Ensures the image fits properly */
-    border: 5px solid #ff6347; /* Optional border for effect */
-    margin-bottom: 20px;  /* Space between image and text */
 }
 
 /* Social Media Links with Animated Hover */

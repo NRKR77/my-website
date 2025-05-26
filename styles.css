@@ -7,11 +7,6 @@ body, html {
     color: #333;
 }
 
-h1, p {
-    margin: 0;
-    padding: 0;
-}
-
 /* Particle Background */
 #particles-js {
     position: absolute;
@@ -42,7 +37,7 @@ h1, p {
     100% { transform: rotate(360deg); }
 }
 
-/* Notification Bar */
+/* Notification Bar Animation */
 .update-notification {
     position: fixed;
     top: 0;
@@ -52,6 +47,12 @@ h1, p {
     text-align: center;
     padding: 10px;
     z-index: 9999;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
 }
 
 /* Dark Mode Styles */
@@ -86,34 +87,58 @@ body.dark-mode footer {
     }
 }
 
-/* Profile Section Glow */
-.shining-name {
-    font-size: 3rem;
-    color: #3498db;
-    text-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db;
-    animation: glow 1.5s infinite alternate;
+.animate-text {
+    animation: fadeIn 2s ease-out;
 }
 
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 15px #3498db;
-    }
-    100% {
-        text-shadow: 0 0 30px #3498db, 0 0 60px #3498db, 0 0 90px #3498db;
-    }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Social Media Icons */
-.social-links a {
+/* Profile Section Animation */
+.animate-profile {
+    animation: fadeInSection 2s ease-out;
+}
+
+@keyframes fadeInSection {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Social Media Icons Animation */
+.animate-links a {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-links a:hover {
+.animate-links a:hover {
     transform: rotate(360deg) scale(1.1);
     color: #FF6347;
+    animation: bounce 0.5s ease-in-out;
 }
 
-/* Scroll to Top Button */
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Floating Action Button */
+.animate-fab {
+    transition: transform 0.3s ease;
+}
+
+.animate-fab:hover {
+    transform: scale(1.2);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Scroll-to-Top Button */
 .scroll-top-btn {
     position: fixed;
     bottom: 20px;
@@ -128,64 +153,68 @@ body.dark-mode footer {
     display: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 9999;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(100px); }
+    100% { transform: translateY(0); }
 }
 
 .scroll-top-btn.show {
     display: block;
 }
 
-/* Slide-In Menu */
-.menu {
-    position: fixed;
-    left: -250px;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    color: white;
-    transition: left 0.3s ease;
-    z-index: 999;
+/* Contact Section Animation */
+.animate-contact {
+    animation: fadeInSection 2s ease-out;
 }
 
-.menu ul {
-    list-style: none;
-    padding: 20px;
+/* Parallax Effect */
+.parallax {
+    background-image: url('path/to/your/image.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
 }
 
-.menu ul li {
-    padding: 15px;
-    border-bottom: 1px solid #444;
+/* Contact Section Styling */
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    animation: fadeIn 1s ease-out;
 }
 
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.menu-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
+.contact-section button {
     background-color: #FF6347;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    z-index: 1000;
+    animation: fadeIn 1s ease-out;
 }
 
-.menu.open {
-    left: 0;
+.contact-section button:hover {
+    background-color: #e5533f;
 }
 
-/* Fade-in Sections */
+/* General Animation Effects */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 .fade-in-section {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s, transform 1s;
+    animation: fadeIn 2s ease-out forwards;
 }
 
 .fade-in-section.visible {
     opacity: 1;
-    transform: translateY(0);
 }

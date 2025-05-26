@@ -3,17 +3,66 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2C3E50; /* Dark blue background */
-    color: white;
+    background-color: #000000; /* Set pure black background */
+    color: white; /* Keep text color white for contrast */
     text-align: center;
+    overflow: hidden;
+    transition: background-color 0.3s ease; /* Smooth transition for background */
 }
 
 /* Header Section Styles */
 header {
-    background-color: #34495E;
+    background-color: #111111; /* Darker shade for header to contrast with background */
     padding: 20px;
     margin-bottom: 30px;
     animation: fadeInHeader 2s ease-in-out;
+}
+
+/* Profile Section Styles */
+.profile-section {
+    margin-top: 40px;
+}
+
+.description {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: #BDC3C7;
+    font-style: italic;
+}
+
+/* Social Media Links */
+.social-links {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInLinks 1.5s ease-in-out;
+}
+
+/* Hover Effects on Social Media Links */
+.social-links a {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    background-color: #2980B9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    background-color: #3498DB;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer Section */
+footer {
+    margin-top: 50px;
+    background-color: #111111; /* Dark footer */
+    padding: 20px;
+    animation: fadeInFooter 2s ease-in-out;
 }
 
 /* Animations */
@@ -28,70 +77,15 @@ header {
     }
 }
 
-/* Shining Text Effect */
-.shining-name {
-    font-size: 3rem;
-    color: #FF6347; /* Tomato color for shining effect */
-    text-shadow: 0 0 10px #FF6347, 0 0 20px #FF6347, 0 0 30px #FF6347;
-    animation: shine 1.5s infinite alternate;
-}
-
-@keyframes shine {
+@keyframes fadeInLinks {
     0% {
-        text-shadow: 0 0 10px #FF6347, 0 0 20px #FF6347, 0 0 30px #FF6347;
+        opacity: 0;
+        transform: translateY(30px);
     }
     100% {
-        text-shadow: 0 0 20px #FF6347, 0 0 40px #FF6347, 0 0 60px #FF6347;
+        opacity: 1;
+        transform: translateY(0);
     }
-}
-
-/* Profile Section Styles */
-.profile-section {
-    margin-top: 40px;
-}
-
-.description {
-    font-size: 1.3rem;
-    margin-top: 10px;
-    color: #BDC3C7; /* Lighter text color */
-    font-style: italic;
-}
-
-/* Social Media Links */
-.social-links {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    animation: fadeInLinks 1.5s ease-in-out;
-}
-
-.social-links a {
-    font-size: 1.5rem;
-    padding: 15px 30px;
-    text-decoration: none;
-    color: white;
-    background-color: #2980B9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background-color: #3498DB;
-    transform: translateY(-5px);
-}
-
-.social-links i {
-    margin-right: 10px;
-}
-
-/* Footer Section */
-footer {
-    margin-top: 50px;
-    background-color: #34495E;
-    padding: 20px;
-    animation: fadeInFooter 2s ease-in-out;
 }
 
 @keyframes fadeInFooter {
@@ -105,20 +99,28 @@ footer {
     }
 }
 
-/* Animations for Links */
-@keyframes fadeInLinks {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
+/* Media Queries */
+@media (max-width: 768px) {
+    .shining-name {
+        font-size: 2.5rem;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+    .description {
+        font-size: 1.1rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+        padding: 12px 25px;
     }
 }
 
 @media (max-width: 600px) {
-    /* Responsive Styles for Smaller Screens */
     .shining-name {
         font-size: 2rem;
     }
@@ -127,8 +129,21 @@ footer {
         font-size: 1rem;
     }
 
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .social-links a {
         font-size: 1.2rem;
-        padding: 12px 25px;
+        padding: 10px 20px;
+    }
+
+    .animate-header {
+        font-size: 1.8rem;
+    }
+
+    .follow-text {
+        font-size: 1rem;
     }
 }

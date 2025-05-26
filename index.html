@@ -6,11 +6,15 @@
     <title>Welcome to NRKR's Personal Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> <!-- Particles.js -->
 </head>
 <body>
-    <!-- Parallax Background -->
-    <div class="bg"></div>
+    <!-- Particle Animation Background -->
+    <div id="particles-js"></div>
     
+    <!-- Loader (Spinner) -->
+    <div id="loader" class="loader"></div>
+
     <!-- Notification Bar -->
     <div class="update-notification">
         <p>Website has been updated! 🎉</p>
@@ -19,6 +23,18 @@
     <!-- Dark Mode Toggle Button -->
     <button class="theme-toggle">Toggle Dark Mode</button>
 
+    <!-- Slide-In Menu Button -->
+    <button class="menu-toggle">☰</button>
+
+    <!-- Slide-In Navigation Menu -->
+    <div id="menu" class="menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
     <!-- Header Section -->
     <header>
         <h1 class="animate-header">Welcome to NRKR's Personal Website!</h1>
@@ -26,32 +42,6 @@
     </header>
 
     <!-- Profile Section -->
-    <section class="profile-section">
+    <section class="profile-section fade-in-section">
         <h1 class="shining-name">NRKR</h1>
-        <p class="description">I am an experienced video editor and a computer gamer.</p>
-    </section>
-
-    <!-- Social Media Links -->
-    <section class="social-links animate-links">
-        <a href="https://www.instagram.com/nr7kr_" target="_blank" class="instagram">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://www.tiktok.com/@nr7kr_" target="_blank" class="tiktok">
-            <i class="fab fa-tiktok"></i> TikTok
-        </a>
-        <a href="https://www.youtube.com/@nr7kr" target="_blank" class="youtube">
-            <i class="fab fa-youtube"></i> YouTube
-        </a>
-    </section>
-
-    <!-- Scroll-to-Top Button -->
-    <button class="scroll-top-btn">↑</button>
-
-    <!-- Footer Section -->
-    <footer class="animate-footer">
-        <p>© 2025 NRKR. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script> <!-- External JavaScript file -->
-</body>
-</html>
+        <p class="description">I am an experienced video
